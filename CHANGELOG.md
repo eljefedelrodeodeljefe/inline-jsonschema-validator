@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/compare/v1.0.2...v1.0.3) (2018-07-20)
+
+
+### Bug Fixes
+
+* **build:** fixes attaching dist ([864650f](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/commit/864650f))
+
 ## [1.0.2](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/compare/v1.0.1...v1.0.2) (2018-07-20)
 
 
