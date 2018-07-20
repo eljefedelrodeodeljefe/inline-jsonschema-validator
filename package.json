@@ -4,10 +4,15 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name inlineJSONSchemaValidator 'src/App.vue'",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
+  "main": "dist/inlineJSONSchemaValidator.common.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "dependencies": {
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.16"
@@ -20,9 +25,13 @@
     "@vue/cli-service": "^3.0.0-rc.5",
     "@vue/eslint-config-standard": "^3.0.0-rc.5",
     "@vue/test-utils": "^1.0.0-beta.20",
+    "ajv": "^6.5.2",
+    "axios": "^0.18.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
-    "vue-template-compiler": "^2.5.16"
+    "firebase-tools": "^3.19.3",
+    "vue-template-compiler": "^2.5.16",
+    "vue2-ace-editor": "0.0.11"
   },
   "eslintConfig": {
     "root": true,
@@ -30,7 +39,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/strongly-recommended",
       "@vue/standard"
     ],
     "rules": {},

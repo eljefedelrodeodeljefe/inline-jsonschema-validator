@@ -1,28 +1,57 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="inline-jsonschema-validator">
+    <schema
+      class="left"
+      :style="{ width: inputActive ? '50%': '100%' }"
+      :schema-url="schemaUrl"
+    />
+    <object-input
+      v-show="inputActive"
+      class="right"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Schema from './components/Schema.vue'
+import ObjectInput from './components/ObjectInput.vue'
 
 export default {
-  name: 'app',
+  data () {
+    return {
+      inputActive: false
+    }
+  },
+  mounted () {
+    this.$root.$on('toggle-input', () => {
+      this.inputActive = !this.inputActive
+    })
+  },
+  name: 'InlineJSONschemaValidator',
   components: {
-    HelloWorld
+    Schema,
+    ObjectInput
+  },
+  props: {
+    schemaUrl: {
+      type: String,
+      default: ''
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.inline-jsonschema-validator {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-grow: 1;
+  margin: 0;
+  height: 100%;
+}
+
+.inline-jsonschema-validator > * {
+  width: 50%;
+  height: 100%;
 }
 </style>
