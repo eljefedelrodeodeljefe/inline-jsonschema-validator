@@ -20,6 +20,12 @@
     "dist",
     "README.md"
   ],
+  "keywords": [
+    "json",
+    "json-schema",
+    "ajv",
+    "ui"
+  ],
   "dependencies": {
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.16"
