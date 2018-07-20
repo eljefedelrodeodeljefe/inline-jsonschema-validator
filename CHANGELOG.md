@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/compare/v1.0.1...v1.0.2) (2018-07-20)
+
+
+### Bug Fixes
+
+* fixes publish ([bab3823](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/commit/bab3823))
+* ignores functions ([67153a8](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/commit/67153a8))
+
 ## [1.0.1](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/compare/v1.0.0...v1.0.1) (2018-07-20)
 
 
