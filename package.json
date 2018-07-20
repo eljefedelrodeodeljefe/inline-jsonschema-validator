@@ -1,6 +1,6 @@
 {
   "name": "inline-jsonschema-validator",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "description": "Display and do validation on JSON Schemas in the browser or as library on your site.",
   "private": true,
   "scripts": {
@@ -9,7 +9,11 @@
     "build:web": "vue-cli-service build",
     "deploy:web": "npm run build:web && npm run build:lib -- --no-clean --dest dist/latest && firebase deploy --only hosting",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "precommit": "git add -A && npm run lint",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare"
   },
   "main": "dist/inlineJSONSchemaValidator.common.js",
   "files": [
@@ -21,6 +25,10 @@
     "vue": "^2.5.16"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.0",
+    "@semantic-release/git": "^7.0.1",
+    "@semantic-release/github": "^5.0.1",
+    "@semantic-release/npm": "^4.0.0",
     "@vue/cli-plugin-babel": "^3.0.0-rc.5",
     "@vue/cli-plugin-eslint": "^3.0.0-rc.5",
     "@vue/cli-plugin-pwa": "^3.0.0-rc.5",
@@ -32,7 +40,12 @@
     "axios": "^0.18.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
+    "codecov": "^3.0.4",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
     "firebase-tools": "^3.19.3",
+    "semantic-release": "^15.8.1",
+    "validate-commit-msg": "^2.14.0",
     "vue-template-compiler": "^2.5.16",
     "vue2-ace-editor": "0.0.11"
   },
@@ -81,5 +94,35 @@
     "testMatch": [
       "**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"
     ]
+  },
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "prepare": [
+      "@semantic-release/npm",
+      "@semantic-release/changelog",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json",
+          "package-lock.json",
+          "dist/**/*",
+          "docs",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    "publish": [
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator.git"
   }
 }
