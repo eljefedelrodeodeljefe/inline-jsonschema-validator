@@ -2,7 +2,7 @@
   "name": "inline-jsonschema-validator",
   "version": "1.0.0",
   "description": "Display and do validation on JSON Schemas in the browser or as library on your site.",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build:lib": "vue-cli-service build --target lib --name inlineJSONSchemaValidator 'src/App.vue'",
