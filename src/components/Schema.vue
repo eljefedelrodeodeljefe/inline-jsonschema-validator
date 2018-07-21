@@ -140,8 +140,8 @@ section {
 }
 
 .toolbar > .toggles {
-  right: 0;
-  top: 0.5em;
+  right: 0.1em;
+  top: 0.3em;
   position: absolute
 }
 
@@ -153,13 +153,20 @@ section {
   width: 100%;
   min-height: 1em;
   max-height: 1em;
-  padding: 0.5em;
+  padding : 1em;
   font-size: 1em;
+  border: none;
+  border: 1px solid transparent;
+  border-top: none;
+  border-bottom: 1px solid #DDD;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.loading {
-  /* background-color: coral; */
-}
+/* .loading {
+  background-color: coral;
+} */
 
 .loaded {
   transition: all 1s ease-out;
