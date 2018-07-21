@@ -128,15 +128,21 @@ export default {
 <style scoped>
 section {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .editor {
-  height: calc(100% - 1em);
+  /* height: 100%; */
+  /* overflow: scroll; */
+  flex: 1;
 }
 
 .toolbar {
   position: relative;
   max-width: 100%;
+  flex-basis: 1em;
 }
 
 .toolbar > .toggles {
@@ -157,10 +163,8 @@ section {
   font-size: 1em;
   border: none;
   border: 1px solid transparent;
-  border-top: none;
+  border-top: 1px solid #DDD;
   border-bottom: 1px solid #DDD;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 

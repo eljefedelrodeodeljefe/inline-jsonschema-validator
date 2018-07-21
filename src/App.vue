@@ -45,9 +45,10 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100%;
-  flex-grow: 1;
+  flex: 1;
   margin: 0;
   height: 100%;
+  overflow: hidden;
 }
 
 .inline-jsonschema-validator > * {

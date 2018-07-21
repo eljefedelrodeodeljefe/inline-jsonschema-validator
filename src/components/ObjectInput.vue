@@ -5,25 +5,31 @@
       :class="validationStyle">{{ validationText }}
     </div>
     <div class="editor">
-      <editor
-        v-model="content"
-        @init="editorInit"
-        lang="json"
-        theme="chrome"
-        width="100%"
-        height="80%"
-        :options="options"
-      />
-      <div class="errors-header">Errors</div>
-      <editor
-        v-model="errors"
-        @init="editorInit"
-        lang="json"
-        theme="chrome"
-        width="100%"
-        height="20%"
-        :options="options"
-      />
+      <div
+        class="input-editor">
+        <editor
+          v-model="content"
+          @init="editorInit"
+          lang="json"
+          theme="chrome"
+          width="100%"
+          height="100%"
+          :options="options"
+        />
+      </div>
+      <div
+        class="errors-editor">
+        <div class="errors-header">Errors</div>
+        <editor
+          v-model="errors"
+          @init="editorInit"
+          lang="json"
+          theme="chrome"
+          width="100%"
+          height="100%"
+          :options="options"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -122,14 +128,37 @@ export default {
 <style scoped>
 section {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .editor {
-  height: calc(100% - 1em);
+  /* height: 100%; */
+  /* overflow: scroll; */
+  flex: 1;
+}
+
+.input-editor {
+  height: 80%;
+  display: flex;
+}
+
+.input-editor > * {
+  flex: 1;
+}
+
+.errors-editor {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-editor > * {
+  flex: 1;
 }
 
 .errors {
-  height: 20%;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -138,8 +167,19 @@ section {
   width: 100%;
   min-height: 1em;
   max-height: 1em;
-  padding: 0.5em;
+  flex-basis: 1em;
+  padding: 1em;
   font-size: 1em;
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  border: none;
+  border: 1px solid transparent;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  border-left: 1px solid #DDD;
+  /* border-bottom: 1px solid #DDD; */
+  box-sizing: border-box;
 }
 
 .validation.checking {
