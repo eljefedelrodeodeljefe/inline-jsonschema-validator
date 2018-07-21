@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/compare/v1.0.3...v1.1.0) (2018-07-21)
+
+
+### Bug Fixes
+
+* **styling:** firxes url input ([704f0ec](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/commit/704f0ec))
+* **styling:** fixes height styling ([9644b79](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/commit/9644b79))
+
+
+### Features
+
+* **styling:** adds errors toggle ([71b76b5](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/commit/71b76b5))
+
 ## [1.0.3](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/compare/v1.0.2...v1.0.3) (2018-07-20)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "inline-jsonschema-validator",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Display and do validation on JSON Schemas in the browser or as library on your site.",
   "private": false,
   "license": "MIT",
