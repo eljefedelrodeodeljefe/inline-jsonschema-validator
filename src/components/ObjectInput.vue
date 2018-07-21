@@ -6,7 +6,9 @@
     </div>
     <div class="editor">
       <div
-        class="input-editor">
+        class="input-editor"
+        :style="{ height: !showErrorsEditor ? 'calc(100% - 2em)' : '80%' }"
+      >
         <editor
           v-model="content"
           @init="editorInit"
@@ -18,8 +20,40 @@
         />
       </div>
       <div
-        class="errors-editor">
-        <div class="errors-header">Errors</div>
+        class="errors-editor"
+        :style="{ height: !showErrorsEditor ? '1em' : '20%' }">
+        <div class="errors-header">
+          <span>Errors</span>
+          <div class="errors-toolbar">
+            <span
+              class="errors-toggle"
+              @click="showErrorsEditor = !showErrorsEditor">
+              <svg
+                v-show="!showErrorsEditor"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24">
+                <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"/>
+              </svg>
+              <svg
+                v-show="showErrorsEditor"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24">
+                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"/>
+              </svg>
+
+            </span>
+          </div>
+        </div>
         <editor
           v-model="errors"
           @init="editorInit"
@@ -58,7 +92,8 @@ export default {
       },
       schema: null,
       validate: null,
-      ajv: null
+      ajv: null,
+      showErrorsEditor: true
     }
   },
   beforeMount () {
@@ -140,7 +175,6 @@ section {
 }
 
 .input-editor {
-  height: 80%;
   display: flex;
 }
 
@@ -149,7 +183,6 @@ section {
 }
 
 .errors-editor {
-  height: 20%;
   display: flex;
   flex-direction: column;
 }
@@ -180,6 +213,11 @@ section {
   border-left: 1px solid #DDD;
   /* border-bottom: 1px solid #DDD; */
   box-sizing: border-box;
+}
+
+.errors-header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .validation.checking {
