@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/compare/v1.1.0...v1.2.0) (2018-07-22)
+
+
+### Features
+
+* **styling:** adds height prop ([72ac1f4](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/commit/72ac1f4))
+
 # [1.1.0](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/compare/v1.0.3...v1.1.0) (2018-07-21)
 
 
