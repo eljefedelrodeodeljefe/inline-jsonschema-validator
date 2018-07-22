@@ -1,5 +1,8 @@
 <template>
-  <div class="inline-jsonschema-validator">
+  <div
+    :style="{ height }"
+    class="inline-jsonschema-validator"
+  >
     <schema
       class="left"
       :style="{ width: inputActive ? '50%': '100%' }"
@@ -35,6 +38,10 @@ export default {
     schemaUrl: {
       type: String,
       default: ''
+    },
+    height: {
+      type: String,
+      default: '100%'
     }
   }
 }
@@ -47,7 +54,6 @@ export default {
   width: 100%;
   flex: 1;
   margin: 0;
-  height: 100%;
   overflow: hidden;
 }
 
