@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/compare/v1.2.0...v1.3.0) (2018-07-22)
+
+
+### Features
+
+* **build:** removes production deps ([734cc13](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/commit/734cc13))
+
 # [1.2.0](https://github.com/eljefedelrodeodeljefe/inline-jsonschema-validator/compare/v1.1.0...v1.2.0) (2018-07-22)
 
 
